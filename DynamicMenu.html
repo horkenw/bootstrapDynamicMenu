@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BootStrap Dynamic Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div role="navigation" class="navbar navbar-default header-bg">
+      <h1 class="navbar-header">
+        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"> 
+          <span class="sr-only">Toggle navigation</span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> 
+          <span class="icon-bar"></span> </button>
+        <a href="https://github.com/horkenw/bootstrapDynamicMenu" class="navbar-brand">BootStrap Menu Set</a>
+      </h1>
+        <!-- Collection of nav links, and menu content for toggling -->
+        <nav id="navbarCollapse" class="collapse navbar-collapse">
+          <div class="clearfix"></div>
+          <ul id="nav_menu_set" class="nav navbar-nav nav-menu">
+          <!--First off: giv id="nav_menu_set" to outermost ul tag -->
+        </ul>
+      </nav>
+    </div>
+    <script src="./js/menuMaker.js"></script>
+    <!-- second step: import menuMaker.js file-->  <!--final: open json file to setting up your menu layer-->
+  </div>
+</body>
+</html>
