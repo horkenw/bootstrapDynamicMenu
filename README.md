@@ -8,7 +8,13 @@
 
 
 ##Attention
-  ! I use es6 templat style to make JSON data, so it does not work on IE browser. if you want to support IE, replace es6 template format to normal style like '{"name":"MenuList","start":[{"name":"Layer_1","url":"","menu":[{"name":"Layer_1_1","url":""......', with no space, no break line then it can support IE too.
+  Browser test:
+  * Chrome: OK!
+  * Firefox: OK!
+  * EDGE: OK!
+  * IE: NO!(see ps)
+
+  ! PS: I use es6 templat style to make JSON data, so it does not work on IE browser. if you want to support IE, replace es6 template format to normal style like '{"name":"MenuList","start":[{"name":"Layer_1","url":"","menu":[{"name":"Layer_1_1","url":""......', with no space, no break line then it can support IE too.
   
 JSON format
 
