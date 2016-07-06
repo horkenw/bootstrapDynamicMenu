@@ -51,18 +51,216 @@ function menuMaker(nodes){
 }
 
 function takeMenu(){
-	$.getJSON('./menudata.json', function(data){
+	var data = jQuery.parseJSON(`{
+  "name": "MenuList",
+  "start": [
+    {
+      "name": "Layer_1",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_1_1",
+          "url": "",
+          "menu": [
+            {
+              "name": "Layer_1_1_1",
+              "url": "#",
+              "menu": [
+                
+              ]
+            },
+            {
+              "name": "Layer_1_1_2",
+              "url": "#",
+              "menu": [
+                
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer_1_2",
+          "url": "#",
+          "menu": [
+            
+          ]
+        },
+        {
+          "name": "Layer_1_3",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_2",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_2_1",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_3",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_3_1",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_4",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_4_1",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_5",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_5_1",
+          "url": "",
+          "menu": [
+            {
+              "name": "Layer_5_1_1",
+              "url": "#",
+              "menu": [
+                
+              ]
+            },
+            {
+              "name": "Layer_5_1_2",
+              "url": "#",
+              "menu": [
+                
+              ]
+            },
+            {
+              "name": "Layer_5_1_3",
+              "url": "#",
+              "menu": [
+                
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer_5_2",
+          "url": "",
+          "menu": [
+            {
+              "name": "Layer_5_2_1",
+              "url": "#",
+              "menu": [
+                
+              ]
+            },
+            {
+              "name": "Layer_5_2_2",
+              "url": "#",
+              "menu": [
+                
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_6",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_6_1",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_7",
+      "url": "",
+      "menu": [
+        {
+          "name": "Layer_7_1",
+          "url": "#",
+          "menu": [
+            
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layer_8",
+      "url": "#",
+      "menu": [
+        
+      ]
+    },
+    {
+      "name": "Layer_9",
+      "url": "#",
+      "menu": [
+        
+      ]
+    },
+    {
+      "name": "Layer_10",
+      "url": "#",
+      "menu": [
+        
+      ]
+    },
+    {
+      "name": "Layer_11",
+      "url": "#",
+      "menu": [
+        
+      ]
+    },
+    {
+      "name": "Layer_12",
+      "url": "#",
+      "menu": [
+        
+      ]
+    }
+  ]
+}`);
+
+	
 		menuMaker(data);
-
-		$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-			event.preventDefault(); 
-			event.stopPropagation(); 
-			$(this).parent().siblings().removeClass('open');
-			$(this).parent().toggleClass('open');
-		});
-	});
-
 }
 
-window.onload= takeMenu;
+(function(){
+	takeMenu();
 
+  $('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+      event.preventDefault(); 
+      event.stopPropagation(); 
+      $(this).parent().siblings().removeClass('open');
+      $(this).parent().toggleClass('open');
+    });
+})();
