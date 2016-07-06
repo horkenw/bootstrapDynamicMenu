@@ -4,11 +4,12 @@
 
 *	first off: giv your root `<ul>` a ID **nav_menu_set**.
 *	Next Step: import **menuMaker.js** after your `<ul>` tag.
-*	Last one: open up **menudata.json** to setting your menu layer and save it.
+*	Last one: find out **var data = ....** at bottom and started to make up your menu.
 
 
 ##Attention
-
+  ! I use es6 templat style to make JSON data, so it does not work on IE browser. if you want to support IE, replace es6 template format to normal style like '{"name":"MenuList","start":[{"name":"Layer_1","url":"","menu":[{"name":"Layer_1_1","url":""......', with no space, no break line then it can support IE too.
+  
 JSON format
 
     {
