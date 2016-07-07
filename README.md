@@ -87,4 +87,4 @@ Exp:
 
 [Prototype tree menu][1]
 
-[1]: https://github.com/horkenw/bootstrapDynamicMenu "Prototype tree menu"
+[1]: http://horkenw.github.io/bootstrapMenu/ "Prototype tree menu"
