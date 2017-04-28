@@ -13,7 +13,7 @@ a.navbar-brand, a.navbar-brand:link, a.navbar-brand:hover {
 	font-size: 25px;
 	line-height: 25px;
 	color: #fff;
-	background: url(../images/logo.png) no-repeat 10px 8px;
+	background: url('') no-repeat 10px 8px;
 	padding-left: 50px;
 	font-weight: bold
 }

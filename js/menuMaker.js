@@ -1,11 +1,14 @@
 'use strict';
 
+function tag(tag){
+  return document.getElementById(tag);
+}
+
 function menuMaker(data){
 
   var _doc = document,
     navEl = _doc.createElement('nav'),
-    _ul = _doc.createElement('ul'),
-    menuWidth = 0;
+    _ul = _doc.createElement('ul');
 
   var menuItems = data.start.reverse();
 
@@ -27,6 +30,16 @@ function menuMaker(data){
     navWrap.children[0].children[0].appendChild(createNodeWithClass('b', 'caret'));
     navWrap.children[0].appendChild(subMenuWrap(false, data.menu, menuOptions.twoLevelItem));
     navWrap.children[0].children[1].className = menuOptions.secondMenuRoot;
+    return navWrap;
+  }
+
+  var fakeTwoLevelLayer = function(data){
+    var navWrap = _doc.createDocumentFragment();
+
+    navWrap.appendChild(createliWrapNode('', menuOptions.firstMenuRoot));
+    navWrap.children[0].appendChild(createTextNode(data.name, data.url, menuOptions.toggleClass));
+    navWrap.children[0].children[0].setAttribute('data-toggle', 'dropdown')
+    navWrap.children[0].children[0].appendChild(createNodeWithClass('b', 'caret'));
     return navWrap;
   }
 
@@ -62,8 +75,6 @@ function menuMaker(data){
         _ul.appendChild(_li);
       }
     }
-    
-
     return ulRoot ? true: _ul;
   }
 
@@ -87,13 +98,9 @@ function menuMaker(data){
     url ? _a.href = url : _a.href = '#';
     return _a;
   }
-
-  function getLiAllWidth(dom){
-    console.log(dom)
-  }
-
+  var roots = _doc.getElementById('nav_menu_set');
   for(var i=menuItems.length; i--;){
-    var roots = _doc.getElementById('nav_menu_set'), item;
+    var item;
     
     if(menuItems[i].total_level)
       switch(menuItems[i].total_level){
@@ -118,5 +125,4 @@ function menuMaker(data){
   navEl.className = 'collapse navbar-collapse topMenu'
   navEl.appendChild(_ul);
   roots.appendChild(navEl);
-  getLiAllWidth(roots.getElementsByTagName('ul')[0]);
 }
