@@ -7,9 +7,15 @@
     <title>BootStrap Dynamic Menu</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/topMenu.css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
+<style>
+  .menu_wrap{
+    overflow: hidden;
+  }
+</style>
 
 <body>
   <div id="wrapper">
@@ -25,13 +31,15 @@
         <!-- Collection of nav links, and menu content for toggling -->
         <nav id="navbarCollapse" class="collapse navbar-collapse">
           <div class="clearfix"></div>
-          <ul id="nav_menu_set" class="nav navbar-nav nav-menu">
+          <div id="nav_menu_set" class="menu_wrap" data-sliderable="true">
           <!--First off: giv id="nav_menu_set" to outermost ul tag -->
         </ul>
       </nav>
     </div>
     <script src="./js/menuMaker.js"></script>
-    <!-- second step: import menuMaker.js file-->  <!--final: find out **var data = ....** at bottom and started to make up your menu-->
+    <script src="./js/datafile.js"></script>
+
+    <!-- second step: import menuMaker.js file-->  <!--final: find out **var data = ....** in datafile at bottom and started to make up your menu-->
   </div>
 </body>
 </html>
