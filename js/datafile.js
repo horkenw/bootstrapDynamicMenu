@@ -1,8 +1,9 @@
 // CSS修改
 var menuOptions = {
-    menuRoot: 'nav navbar-nav',
+    menuRoot: 'nav navbar-nav col-md-12',
     toggleClass: 'dropdown-toggle',
-    firstMenuRoot: 'dropdown menu-large',
+    oneLevelItem: 'col-md-2',
+    firstMenuRoot: 'dropdown menu-large col-md-2',
     secondMenuRoot: 'dropdown-menu megamenu row',
     twoLevelItem: 'col-md-4',
     threeLevelMenu: 'col-md-4 col-sm-12 col-xs-12 pd_btm',

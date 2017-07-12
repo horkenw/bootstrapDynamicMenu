@@ -8,16 +8,18 @@ function menuMaker(data){
 
   var _doc = document,
     navEl = _doc.createElement('nav'),
+    wrapDIV = _doc.createElement('div'),
     _ul = _doc.createElement('ul');
 
-  var menuItems = data.start.reverse();
+  var menuItems = data.start;
 
   var oneLevelLayer = function(data){
     var navWrap = _doc.createDocumentFragment(), wrapNode;
 
     wrapNode = createliWrapNode();
     wrapNode.appendChild(createTextNode(data.name, data.url));
-    navWrap.appendChild(wrapNode)
+    navWrap.appendChild(wrapNode);
+    navWrap.children[0].className = menuOptions.oneLevelItem;
     return navWrap;
   }
 
@@ -98,31 +100,37 @@ function menuMaker(data){
     url ? _a.href = url : _a.href = '#';
     return _a;
   }
+
+  //start
   var roots = _doc.getElementById('nav_menu_set');
-  for(var i=menuItems.length; i--;){
-    var item;
-    
-    if(menuItems[i].total_level)
-      switch(menuItems[i].total_level){
-        case 1:
-          item = oneLevelLayer(menuItems[i]);
-          break; 
-        case 2:
-          item = twoLevelLayer(menuItems[i]);
-          break;
-        case 3:
-          item = threeLevelLayer(menuItems[i]);
-          break;
-        case 4:
-          // todo: fourLevelLayer(needed?)
-          break;
-        default:
-          break;
-      }
-    _ul.appendChild(item);
-  }
+  if(roots.dataset.sliderable !== 'true')
+    for(var i=0, l=6; i<l; i++){
+      var item;
+      
+      if(menuItems[i].total_level)
+        switch(menuItems[i].total_level){
+          case 1:
+            item = oneLevelLayer(menuItems[i]);
+            break; 
+          case 2:
+            item = twoLevelLayer(menuItems[i]);
+            break;
+          case 3:
+            item = threeLevelLayer(menuItems[i]);
+            break;
+          case 4:
+            // todo: fourLevelLayer(needed?)
+            break;
+          default:
+            break;
+        }
+      _ul.appendChild(item);
+    }
+  else '';
   _ul.className = menuOptions.menuRoot;
-  navEl.className = 'collapse navbar-collapse topMenu'
-  navEl.appendChild(_ul);
+  wrapDIV.className = "collapse navbar-collapse topMenu";
+  wrapDIV.appendChild(_ul);
+  // navEl.className = "navbar";
+  navEl.appendChild(wrapDIV);
   roots.appendChild(navEl);
 }
